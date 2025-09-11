@@ -1,33 +1,10 @@
+import React from 'react';
 import { motion } from "framer-motion";
 import {
-    FaCode,
-    FaLaptopCode,
-    FaServer,
-    FaMobileAlt,
-    FaDatabase,
-    FaTools,
-    FaHtml5,
-    FaJsSquare,
-    FaReact,
-    FaPhp,
-    FaJava,
-    FaPython,
-    FaNodeJs,
-    FaBootstrap,
     FaHandsHelping
 } from "react-icons/fa";
-import { FiAward, FiUser } from "react-icons/fi";
+import { FiAward } from "react-icons/fi";
 import { MdSchool, MdWork } from "react-icons/md";
-import {
-    SiTailwindcss,
-    SiMongodb,
-    SiPostman,
-    SiCplusplus,
-    SiFigma,
-    SiAdobephotoshop,
-    SiGit,
-} from "react-icons/si";
-import { GrMysql } from "react-icons/gr";
 
 import volunteer1 from "../assets/v2.jpeg";
 import volunteer2 from "../assets/v1.jpeg";
@@ -42,14 +19,14 @@ const About = () => {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2,
+                staggerChildren: 0.15,
                 when: "beforeChildren"
             }
         }
     };
 
     const item = {
-        hidden: { y: 20, opacity: 0 },
+        hidden: { y: 30, opacity: 0 },
         visible: {
             y: 0,
             opacity: 1,
@@ -60,70 +37,13 @@ const About = () => {
         }
     };
 
-    const skills = [
-        {
-            name: "Frontend Development",
-            icon: <FaLaptopCode className="text-3xl" />,
-            subSkills: [
-                { name: "HTML5", icon: <FaHtml5 style={{ color: "#E34F26" }} className="text-xl" /> },
-                { name: "CSS3", icon: <FaHtml5 style={{ color: "#264DE4" }} className="text-xl" /> },
-                { name: "JavaScript", icon: <FaJsSquare style={{ color: "#F7DF1E" }} className="text-xl" /> },
-                { name: "React", icon: <FaReact style={{ color: "#61DAFB" }} className="text-xl" /> },
-                { name: "Bootstrap", icon: <FaBootstrap style={{ color: "#7952B3" }} className="text-xl" /> },
-                { name: "Tailwind", icon: <SiTailwindcss style={{ color: "#38B2AC" }} className="text-xl" /> },
-            ],
-        },
-        {
-            name: "Backend Development",
-            icon: <FaServer className="text-3xl" />,
-            subSkills: [
-                { name: "Node.js", icon: <FaNodeJs style={{ color: "#339933" }} className="text-xl" /> },
-                { name: "PHP", icon: <FaPhp style={{ color: "#777BB4" }} className="text-xl" /> },
-                { name: "Java", icon: <FaJava style={{ color: "#007396" }} className="text-xl" /> },
-                { name: "Python", icon: <FaPython style={{ color: "#3776AB" }} className="text-xl" /> },
-            ],
-        },
-        {
-            name: "Mobile Development",
-            icon: <FaMobileAlt className="text-3xl" />,
-            subSkills: [
-                { name: "React Native", icon: <FaReact style={{ color: "#61DAFB" }} className="text-xl" /> },
-            ],
-        },
-        {
-            name: "Database",
-            icon: <FaDatabase className="text-3xl" />,
-            subSkills: [
-                { name: "MySQL", icon: <GrMysql style={{ color: "#4479A1" }} className="text-xl" /> },
-                { name: "MongoDB", icon: <SiMongodb style={{ color: "#47A248" }} className="text-xl" /> },
-            ],
-        },
-        {
-            name: "UI/UX Design",
-            icon: <FaTools className="text-3xl" />,
-            subSkills: [
-                { name: "Figma", icon: <SiFigma style={{ color: "#F24E1E" }} className="text-xl" /> },
-                { name: "Photoshop", icon: <SiAdobephotoshop style={{ color: "#31A8FF" }} className="text-xl" /> },
-            ],
-        },
-        {
-            name: "Tools",
-            icon: <SiGit className="text-3xl" />,
-            subSkills: [
-                { name: "Git", icon: <SiGit style={{ color: "#F05032" }} className="text-xl" /> },
-                { name: "Postman", icon: <SiPostman style={{ color: "#FF6C37" }} className="text-xl" /> },
-                { name: "C++", icon: <SiCplusplus style={{ color: "#00599C" }} className="text-xl" /> },
-            ],
-        },
-    ];
-
     const timeline = [
         {
             id: 1,
             title: "Teaching & Research Assistant",
             company: "KNUST Physics Department",
             date: "2024 - Present",
-            icon: <MdWork />,
+            icon: <MdWork className="text-lg" />,
             description: "Help to conduct and supervise lab sessions for undergraduate Physics students, teach solid state physics, Java and web programming, and assist with research literature reviews.",
             type: "work"
         },
@@ -132,7 +52,7 @@ const About = () => {
             title: "BSc. Physics (Computing)",
             company: "KNUST",
             date: "2020 - 2024",
-            icon: <MdSchool />,
+            icon: <MdSchool className="text-lg" />,
             description: "Attained a BSc in Physics with Computing specialization, (Graduated in November 2024).",
             type: "education"
         },
@@ -141,262 +61,194 @@ const About = () => {
             title: "Web Development",
             company: "Udacity",
             date: "2023",
-            icon: <FiAward />,
+            icon: <FiAward className="text-lg" />,
             description: "Advanced web development certification focusing on modern JavaScript.",
             type: "education"
         }
     ];
 
-    const volunteerImages = [volunteer1, volunteer2, volunteer3, volunteer4, volunteer5];
+    const outreachActivities = [
+        {
+            id: 1,
+            title: "Science Outreach Volunteer",
+            organization: "KNUST Photonics Students Chapter",
+            description: "As an active volunteer, I participate in science outreach programs that promote optics and photonics through:",
+            activities: [
+                "Hands-on experimental demonstrations",
+                "Interactive workshops for high school students",
+                "STEM career guidance sessions",
+                "Community science awareness programs"
+            ],
+            link: "https://www.linkedin.com/company/knust-photonics-chapter/",
+            linkText: "Follow Us",
+            images: [volunteer1, volunteer2, volunteer3, volunteer4, volunteer5]
+        },
+        {
+            id: 2,
+            title: "Community Development Initiative",
+            organization: "Local Tech Community",
+            description: "Leading technology education and digital literacy programs to empower underserved communities through:",
+            activities: [
+                "Free coding bootcamps for youth",
+                "Digital skills training for entrepreneurs",
+                "Tech mentorship programs",
+                "Community hackathons and innovation challenges"
+            ],
+            link: "#community",
+            linkText: "Join Initiative",
+            images: [volunteer1, volunteer3, volunteer5]
+        }
+    ];
 
     return (
-        <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <section id="about" className="py-12 mt-12 sm:py-20 lg:py-20 px-4 sm:px-6 lg:px-8-white bg-gradient-to-br from-background via-background to-muted">
             <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={container}
                 className="max-w-6xl mx-auto"
             >
-                {/* Hero Section */}
-                <motion.div variants={item} className="text-center mb-20">
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                        About <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Me</span>
-                    </h1>
-                    <div className="max-w-3xl mx-auto">
-                        <p className="text-xl text-gray-600 mb-8">
-                            Full-stack developer specializing in building exceptional digital experiences with modern technologies.
-                        </p>
-                        <motion.div
-                            whileHover={{ scale: 1.05 }}
-                            className="inline-block"
-                        >
-                            <a
-                                href="#contact"
-                                className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white px-8 py-3 rounded-lg font-medium transition-opacity"
-                            >
-                                Let's Connect
-                            </a>
-                        </motion.div>
-                    </div>
-                </motion.div>
-
-                {/* About Content */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
-                    <motion.div variants={item} className="flex flex-col justify-center order-2 lg:order-1">
-                        <h2 className="text-3xl font-bold mb-6">
-                            Who <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Am I?</span>
-                        </h2>
-                        <div className="space-y-4 text-gray-600">
-                            <p>
-                                I'm a curious, creative, and driven individual with a strong background in Physics and Computing. I enjoy solving complex problems and exploring how physical principles can be modeled, simulated, or enhanced through technology.
-                            </p>
-                            <p>
-                                My journey has led me to work on diverse projects—from Raman spectroscopy analysis of herbal bitters to machine learning applications in computational physics, blending hands-on science with code.
-                            </p>
-                        </div>
-                    </motion.div>
-
-                    <motion.div variants={item} className="flex justify-center lg:justify-end order-1 lg:order-2">
-                        <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden border-4 border-white shadow-2xl transform rotate-3 hover:rotate-0 transition-transform">
-                            <img
-                                src="https://www.makerstations.io/content/images/2023/06/asher-mitilinakis-desk-setup-01-1.JPG"
-                                alt="Workstation"
-                                className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent"></div>
-                        </div>
-                    </motion.div>
-                </div>
-
-                {/* Skills Section */}
-                <motion.div variants={item} className="mb-20">
-                    <div>
-                        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-                            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Expertise</span>
-                        </h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {skills.map((skill, index) => (
-                                <motion.div
-                                    key={index}
-                                    whileHover={{ y: -5 }}
-                                    className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all"
-                                >
-                                    <div className="flex items-center mb-4">
-                                        <div className="text-secondary mr-3">
-                                            {skill.icon}
-                                        </div>
-                                        <h3 className="text-xl font-semibold text-gray-800">
-                                            {skill.name}
-                                        </h3>
-                                    </div>
-
-                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                                        {skill.subSkills.map((sub, i) => (
-                                            <div key={i} className="flex flex-col items-center p-3 bg-gray-50 rounded-lg shadow-lg shadow-gray-500">
-                                                <span className="mb-2">
-                                                    {sub.icon}
-                                                </span>
-                                                <span className="text-sm text-gray-700 text-center">
-                                                    {sub.name}
-                                                </span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </motion.div>
-
                 {/* Timeline Section */}
-                <motion.div variants={item} className="mb-20">
-                    <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-                        My <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Journey</span>
+                <motion.div variants={item} className="mb-12 sm:mb-16 lg:mb-20">
+                    <h2 className="text-2xl sm:text-3xl lg:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
+                        My{" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                            Journey
+                        </span>
                     </h2>
-                    <div className="relative">
-                        {/* Timeline line - Hidden on mobile */}
-                        <div className="hidden md:block absolute left-1/2 w-0.5 h-full bg-gray-200 transform -translate-x-1/2"></div>
 
-                        <div className="space-y-12 md:space-y-0">
-                            {timeline.map((item, index) => (
+                    <div className="relative">
+                        {/* Timeline line - Hidden on mobile, visible on larger screens */}
+                        <div className="hidden lg:block absolute left-1/2 w-1 shadow-lg h-full bg-gradient-to-b from-primary/30 via-secondary/30 to-primary/30 transform -translate-x-1/2 rounded-full"></div>
+
+                        <div className="space-y-8 lg:space-y-12">
+                            {timeline.map((timelineItem, index) => (
                                 <motion.div
-                                    key={item.id}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className={`relative md:w-1/2 ${index % 2 === 0 ? 'md:ml-0 md:pr-8' : 'md:ml-auto md:pl-8'}`}
+                                    className={`relative w-full lg:w-1/2 ${index % 2 === 0 ? 'lg:ml-0 lg:pr-8' : 'lg:ml-auto lg:pl-8'}`}
                                 >
-                                    <div className={`p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow ${index % 2 === 0 ? 'md:mr-4' : 'md:ml-4'}`}>
-                                        <div className="flex items-start">
-                                            <div className={`p-3 rounded-lg ${item.type === 'work' ? 'bg-primary' : 'bg-secondary'} text-white mr-4`}>
-                                                {item.icon}
+                                    {/* Timeline dot */}
+                                    <div
+                                        className="hidden lg:block absolute top-6 w-6 h-6 bg-gradient-to-r from-primary to-secondary rounded-full shadow-lg border-4 border-white transform -translate-x-1/2 z-10"
+                                        style={{
+                                            left: index % 2 === 0 ? '100%' : '0%',
+                                            marginLeft: index % 2 === 0 ? '2rem' : '-2rem'
+                                        }}
+                                    />
+
+                                    <motion.div
+                                        className={`p-4 sm:p-6 bg-white rounded-2xl shadow-lg shadow-primary/80 hover:shadow-lg hover:shadow-secondary/70 transition-all duration-300 border border-gray-100 hover:border-primary/20 ${index % 2 === 0 ? 'lg:mr-4' : 'lg:ml-4'} relative overflow-hidden`}
+                                        whileHover={{ y: -5, scale: 1.02 }}
+                                    >
+                                        {/* Subtle background pattern */}
+                                        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-full -mr-10 -mt-10 opacity-50" />
+
+                                        <div className="flex items-start relative z-10">
+                                            <div className={`p-3 sm:p-4 rounded-xl ${timelineItem.type === 'work' ? 'bg-gradient-to-br from-primary to-primary/80' : 'bg-gradient-to-br from-secondary to-secondary/80'} text-white mr-3 sm:mr-4 shadow-md flex-shrink-0`}>
+                                                {timelineItem.icon}
                                             </div>
-                                            <div>
-                                                <h3 className="text-xl font-semibold text-gray-800 mb-1">
-                                                    {item.title}
+                                            <div className="flex-1 min-w-0">
+                                                <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1">
+                                                    {timelineItem.title}
                                                 </h3>
                                                 <p className="text-sm text-primary font-medium mb-2">
-                                                    {item.company} • {item.date}
+                                                    {timelineItem.company} • {timelineItem.date}
                                                 </p>
-                                                <p className="text-gray-600">
-                                                    {item.description}
+                                                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                                                    {timelineItem.description}
                                                 </p>
                                             </div>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 </motion.div>
                             ))}
                         </div>
                     </div>
                 </motion.div>
-                {/* Content */}
-                <div className="w-full md:w-2/3 p-8">
-                    <div className="flex items-start gap-6">
-                        <div className="p-4 bg-primary/10 rounded-xl text-primary">
-                            <FaHandsHelping className="text-3xl" />
-                        </div>
-                        <div>
-                            <h3 className="text-2xl font-bold mb-4">
-                                Science Outreach Volunteer
-                                <span className="block text-lg text-secondary">KNUST Photonics Students Chapter</span>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
 
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-900 pt-12 mb-8 sm:mb-12">
+                    Volunteer{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                        Activities
+                    </span>
+                </h2>
 
-                {/* Volunteer Section */}
-                <motion.div variants={item} className="mb-20">
-                    <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                        <div className="flex flex-col md:flex-row pb-8 gap-6">
-                            {/* Image Gallery */}
-                            <div className="w-full md:w-1/3 p-6 bg-gray-50 flex flex-wrap justify-center items-center gap-4">
-                                {volunteerImages.map((imgSrc, index) => (
+                {/* Outreach Activities Sections */}
+                {outreachActivities.map((outreach, sectionIndex) => (
+                    <motion.div key={outreach.id} variants={item} className="mb-12 sm:mb-16 lg:mb-20">
+                        <motion.div
+                            className="bg-white rounded-3xl shadow-lg overflow-hidden border border-secondary/50 hover:shadow-xl transition-all duration-500"
+                            whileHover={{ y: -8 }}
+                        >
+                            <div className={`flex flex-col lg:flex-row ${sectionIndex % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                                {/* Text Content */}
+                                <div className="w-full lg:w-2/3 p-6 sm:p-8 lg:p-10">
+                                    <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
+                                        <div className="p-3 sm:p-4 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl text-primary shadow-sm flex-shrink-0">
+                                            <FaHandsHelping className="text-2xl sm:text-3xl" />
+                                        </div>
+                                        <div className="min-w-0">
+                                            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 text-gray-800 leading-tight">
+                                                {outreach.title}
+                                            </h3>
+                                            <span className="text-base sm:text-lg text-secondary font-medium">
+                                                {outreach.organization}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <p className="text-primary mb-6 text-base sm:text-lg leading-relaxed">
+                                        {outreach.description}
+                                    </p>
+
+                                    <ul className="list-none text-gray-600 space-y-2 sm:space-y-3 mb-6 sm:mb-8 text-sm sm:text-base">
+                                        {outreach.activities.map((activity, index) => (
+                                            <motion.li
+                                                key={index}
+                                                className="leading-relaxed flex items-start"
+                                                whileHover={{ x: 5 }}
+                                                transition={{ type: "spring", stiffness: 300 }}
+                                            >
+                                                <span className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full mt-2 mr-3 flex-shrink-0" />
+                                                {activity}
+                                            </motion.li>
+                                        ))}
+                                    </ul>
+
                                     <motion.div
-                                        key={index}
                                         whileHover={{ scale: 1.05 }}
-                                        className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg"
+                                        whileTap={{ scale: 0.95 }}
+                                        className="inline-block"
                                     >
-                                        <img
-                                            src={imgSrc}
-                                            alt={`Volunteer activity ${index + 1}`}
-                                            className="w-full h-full object-cover"
-                                        />
+                                        <a
+                                            href={outreach.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white px-6 sm:px-8 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
+                                        >
+                                            {outreach.linkText || "Learn More"}
+                                        </a>
                                     </motion.div>
-                                ))}
-                            </div>
-                            <div>
-                                <p className="text-primary py-2 px-6">
-                                    As an active volunteer, I participate in science outreach programs that promote optics and photonics through:
-                                </p>
-                                <ul className="list-disc text-gray-600 space-y-2 pl-10 pr-6 mb-6">
-                                    <li>Hands-on experimental demonstrations</li>
-                                    <li>Interactive workshops for high school students</li>
-                                    <li>STEM career guidance sessions</li>
-                                    <li>Community science awareness programs</li>
-                                </ul>
-
-                                <motion.div
-                                    whileHover={{ scale: 1.05 }}
-                                    className="inline-block"
-                                >
-                                    <a
-                                        href="https://www.linkedin.com/company/knust-photonics-chapter/"
-                                        className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white px-8 py-3
-                                         rounded-lg font-medium transition-opacity ml-5"
-                                    >
-                                        Follow Us
-                                    </a>
-                                </motion.div>
-
-                            </div>
-                        </div>
-                    </div>
-                </motion.div>
-
-                {/* Philosophy Section */}
-                <motion.div variants={item} className="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 sm:p-12 rounded-2xl">
-                    <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
-                        Development <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Philosophy</span>
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {[
-                            {
-                                icon: <FiUser className="text-4xl" />,
-                                title: "User First",
-                                content: "Solutions start with understanding real user needs and behaviors."
-                            },
-                            {
-                                icon: <FaCode className="text-4xl" />,
-                                title: "Clean Code",
-                                content: "Maintainable, well-structured code is non-negotiable."
-                            },
-                            {
-                                icon: <FiAward className="text-4xl" />,
-                                title: "Continuous Growth",
-                                content: "Daily learning to stay ahead in evolving tech landscape."
-                            }
-                        ].map((principle, index) => (
-                            <motion.div
-                                key={index}
-                                whileHover={{ y: -5 }}
-                                className="bg-white p-6 rounded-xl shadow-lg text-center"
-                            >
-                                <div className="text-secondary mb-4">
-                                    {principle.icon}
                                 </div>
-                                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                                    {principle.title}
-                                </h3>
-                                <p className="text-gray-600">
-                                    {principle.content}
-                                </p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
+
+                                {/* Image Gallery */}
+                                <div className="w-full lg:w-1/3 p-4 sm:p-6 bg-gradient-to-br from-gray-50 to-primary/5 flex flex-wrap justify-center items-center gap-3 sm:gap-4">
+                                    {outreach.images.map((imgSrc, index) => (
+                                        <motion.div
+                                            key={index}
+                                            whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
+                                            transition={{ duration: 0.3 }}
+                                            className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden border-3 sm:border-4 border-white shadow-md hover:shadow-lg transition-all duration-300"
+                                        >
+                                            <img
+                                                src={imgSrc}
+                                                alt={`${outreach.title} activity ${index + 1}`}
+                                                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                                                loading="lazy"
+                                            />
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                ))}
             </motion.div>
         </section>
     );
