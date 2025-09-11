@@ -38,10 +38,10 @@ import ManageProjects from './Pages/Admin/manageProjects';
 
 
 // Auth Pages
-import AdminLogin from './pages/Admin/adminLogin';
-import AdminRegister from './pages/Admin/adminRegister';
-import PasswordReset from './pages/Admin/passwordReset';
-import EmailVerification from './pages/Admin/emailVerification';
+import AdminLogin from './Pages/Admin/adminLogin';
+import AdminRegister from './Pages/Admin/adminRegister';
+import PasswordReset from './Pages/Admin/passwordReset';
+import EmailVerification from './Pages/Admin/emailVerification';
 
 
 // Login/Register wrappers to redirect if already authenticated
