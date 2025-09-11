@@ -187,7 +187,7 @@ const Projects = ({ showAll = false, limit = 3 }) => {
             <motion.div
                 variants={projectVariants}
                 whileHover="hover"
-                className="bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg transition-all duration-300
+                className="bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg shadow-primary/70 transition-all duration-300
                  flex flex-col border border-gray-100 h-full"
             >
                 {/* Project Image */}
@@ -300,7 +300,7 @@ const Projects = ({ showAll = false, limit = 3 }) => {
                                 href={live}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex-1 text-center bg-primary hover:bg-primary-dark text-white px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-1.5 sm:gap-2"
+                                className="flex-1 text-center bg-secondary hover:bg-primary-dark text-white px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-1.5 sm:gap-2"
                                 whileHover={{ y: -2 }}
                                 whileTap={{ scale: 0.98 }}
                             >
@@ -323,13 +323,9 @@ const Projects = ({ showAll = false, limit = 3 }) => {
         <>
             <section
                 id="projects"
-                className="py-16 md:py-20 px-4 sm:px-6 lg:px-8"
+                className="pt-24 sm:mt-8 md:pt-20 px-4 sm:px-6 lg:px-8"
             >
                 <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    variants={containerVariants}
                     className="max-w-7xl mx-auto"
                 >
                     {/* Section Header */}
@@ -338,7 +334,7 @@ const Projects = ({ showAll = false, limit = 3 }) => {
                         className="text-center mb-12 md:mb-16"
                     >
                         <motion.h2
-                            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6"
+                            className="text-2xl sm:text-3xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
@@ -346,10 +342,7 @@ const Projects = ({ showAll = false, limit = 3 }) => {
                             My <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Projects</span>
                         </motion.h2>
                         <motion.p
-                            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 0.4 }}
+                            className="text-md sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4"
                         >
                             {showAll ? (
                                 <>
@@ -379,58 +372,67 @@ const Projects = ({ showAll = false, limit = 3 }) => {
                                 ))}
                             </div>
 
-                            {/* Mobile Swiper */}
-                            <div className="md:hidden relative mx-2">
-                                <div className="overflow-hidden rounded-xl">
-                                    <div
-                                        className="flex transition-transform duration-500 ease-in-out"
-                                        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                                    >
-                                        {projects.map((project, index) => (
-                                            <div key={project._id} className="w-full flex-shrink-0 px-2">
-                                                <ProjectCard project={project} index={index} />
-                                            </div>
-                                        ))}
+                            {/* Mobile Swiper - Only show on home page (when not showing all projects) */}
+                            {!showAll ? (
+                                <div className="md:hidden relative mx-2">
+                                    <div className="overflow-hidden rounded-xl shadow-xl pb-4 ml-2 mr-2">
+                                        <div
+                                            className="flex transition-transform duration-500 ease-in-out"
+                                            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                                        >
+                                            {projects.map((project, index) => (
+                                                <div key={project._id} className="w-full flex-shrink-0 px-2">
+                                                    <ProjectCard project={project} index={index} />
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
 
-                                {/* Navigation Arrows */}
-                                {projects.length > 1 && (
-                                    <>
-                                        <button
-                                            onClick={prevSlide}
-                                            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all z-10 backdrop-blur-sm"
-                                            aria-label="Previous project"
-                                        >
-                                            <ChevronLeft className="w-5 h-5 text-primary" />
-                                        </button>
-                                        <button
-                                            onClick={nextSlide}
-                                            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all z-10 backdrop-blur-sm"
-                                            aria-label="Next project"
-                                        >
-                                            <ChevronRight className="w-5 h-5 text-primary" />
-                                        </button>
-                                    </>
-                                )}
-
-                                {/* Dots Indicator */}
-                                {projects.length > 1 && (
-                                    <div className="flex justify-center mt-6 space-x-2">
-                                        {projects.map((_, index) => (
+                                    {/* Navigation Arrows */}
+                                    {projects.length > 1 && (
+                                        <>
                                             <button
-                                                key={index}
-                                                onClick={() => goToSlide(index)}
-                                                className={`w-2 h-2 rounded-full transition-all ${index === currentSlide
-                                                    ? 'bg-primary scale-125'
-                                                    : 'bg-gray-300 hover:bg-gray-400'
-                                                    }`}
-                                                aria-label={`Go to slide ${index + 1}`}
-                                            />
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
+                                                onClick={prevSlide}
+                                                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all z-10 backdrop-blur-sm"
+                                                aria-label="Previous project"
+                                            >
+                                                <ChevronLeft className="w-5 h-5 text-secondary" />
+                                            </button>
+                                            <button
+                                                onClick={nextSlide}
+                                                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all z-10 backdrop-blur-sm"
+                                                aria-label="Next project"
+                                            >
+                                                <ChevronRight className="w-5 h-5 text-secondary" />
+                                            </button>
+                                        </>
+                                    )}
+
+                                    {/* Dots Indicator */}
+                                    {projects.length > 1 && (
+                                        <div className="flex justify-center mt-6 space-x-2">
+                                            {projects.map((_, index) => (
+                                                <button
+                                                    key={index}
+                                                    onClick={() => goToSlide(index)}
+                                                    className={`w-2 h-2 rounded-full transition-all ${index === currentSlide
+                                                        ? 'bg-primary scale-125'
+                                                        : 'bg-gray-300 hover:bg-gray-400'
+                                                        }`}
+                                                    aria-label={`Go to slide ${index + 1}`}
+                                                />
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            ) : (
+                                // On the main projects page, show grid layout even on mobile
+                                <div className="grid grid-cols-1 gap-6 md:hidden">
+                                    {projects.map((project, index) => (
+                                        <ProjectCard key={project._id} project={project} index={index} />
+                                    ))}
+                                </div>
+                            )}
                         </>
                     ) : (
                         // Empty state
@@ -454,7 +456,7 @@ const Projects = ({ showAll = false, limit = 3 }) => {
                         >
                             <motion.a
                                 href="/projects"
-                                className="inline-flex items-center px-6 py-3 md:px-8 md:py-4 border-2 border-primary rounded-full text-primary hover:bg-primary hover:text-white transition-all duration-300 font-medium text-base md:text-lg"
+                                className="inline-flex items-center px-4 py-2 md:px-8 md:py-4 border-2 border-primary rounded-full text-primary hover:bg-secondary hover:border-none hover:text-white transition-all duration-300 font-medium text-base md:text-lg"
                                 whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" }}
                                 whileTap={{ scale: 0.95 }}
                             >
