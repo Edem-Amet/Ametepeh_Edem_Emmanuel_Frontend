@@ -11,6 +11,10 @@ import volunteer2 from "../assets/v1.jpeg";
 import volunteer3 from "../assets/v3.jpeg";
 import volunteer4 from "../assets/spiepic.jpeg";
 import volunteer5 from "../assets/v5.jpg";
+import sci1 from "../assets/sci1.jpg";
+import sci2 from "../assets/sci2.jpg";
+import sci3 from "../assets/sci3.jpg";
+import sci4 from "../assets/sci4.jpg";
 
 const About = () => {
     // Animation variants
@@ -94,7 +98,7 @@ const About = () => {
             ],
             link: "https://www.linkedin.com/posts/knust-photonics-chapter_kpsc-scifest2025-steminmotion-activity-7354096052108505090-XOfF?utm_source=share&utm_medium=member_desktop&rcm=ACoAADyIPKgBngAfiikk5xQb018nn--zZ6lG7bc",
             linkText: "Join Initiative",
-            images: [volunteer1, volunteer3, volunteer5]
+            images: [sci1, sci2, sci3, sci4]
         }
     ];
 
