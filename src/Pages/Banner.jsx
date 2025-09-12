@@ -293,7 +293,7 @@ const Banner = () => {
                             {/* Main Headline */}
                             <motion.div variants={itemVariants} className="space-y-4 mb-6 md:mb-8">
                                 <motion.h1
-                                    className="text-2xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl font-bold leading-tight"
+                                    className="text-2xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl font-bold leading-tight"
                                     variants={itemVariants}
                                 >
                                     <span className="text-primary">
