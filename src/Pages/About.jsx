@@ -54,16 +54,16 @@ const About = () => {
             date: "2020 - 2024",
             icon: <MdSchool className="text-lg" />,
             description: "Attained a BSc in Physics with Computing specialization, (Graduated in November 2024).",
-            type: "education"
+            type: "Education"
         },
         {
             id: 3,
             title: "Web Development",
-            company: "Udacity",
+            company: "Self Taught",
             date: "2023",
             icon: <FiAward className="text-lg" />,
-            description: "Advanced web development certification focusing on modern JavaScript.",
-            type: "education"
+            description: "Studied web development and User experience in product design; where the journey began",
+            type: "Personal Education"
         }
     ];
 
@@ -77,7 +77,6 @@ const About = () => {
                 "Hands-on experimental demonstrations",
                 "Interactive workshops for high school students",
                 "STEM career guidance sessions",
-                "Community science awareness programs"
             ],
             link: "https://www.linkedin.com/company/knust-photonics-chapter/",
             linkText: "Follow Us",
@@ -85,16 +84,15 @@ const About = () => {
         },
         {
             id: 2,
-            title: "Community Development Initiative",
-            organization: "Local Tech Community",
-            description: "Leading technology education and digital literacy programs to empower underserved communities through:",
+            title: "Volunteer at SciFest Ghana in 2024 & in 2025",
+            organization: "KNUST College Of Science",
+            description: "Creating the awareness of STEM in the young generation",
             activities: [
-                "Free coding bootcamps for youth",
-                "Digital skills training for entrepreneurs",
-                "Tech mentorship programs",
-                "Community hackathons and innovation challenges"
+                "Hands on experiment",
+                "Detailed explanation of theoretical science",
+                "Mentorship programs"
             ],
-            link: "#community",
+            link: "https://www.linkedin.com/posts/knust-photonics-chapter_kpsc-scifest2025-steminmotion-activity-7354096052108505090-XOfF?utm_source=share&utm_medium=member_desktop&rcm=ACoAADyIPKgBngAfiikk5xQb018nn--zZ6lG7bc",
             linkText: "Join Initiative",
             images: [volunteer1, volunteer3, volunteer5]
         }

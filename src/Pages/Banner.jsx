@@ -170,7 +170,7 @@ const Banner = () => {
             y: 0,
             opacity: 1,
             transition: {
-                duration: 0.6,
+                duration: 0.4,
                 ease: "easeOut"
             }
         }
@@ -181,7 +181,7 @@ const Banner = () => {
             y: [0, -15, 0],
             rotate: [0, 3, -3, 0],
             transition: {
-                duration: 6,
+                duration: 4,
                 repeat: Infinity,
                 ease: "easeInOut"
             }
