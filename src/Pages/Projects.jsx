@@ -317,7 +317,7 @@ const Projects = ({ showAll = false, limit = 3 }) => {
                 </div>
             </motion.div>
         );
-    };.......
+    };
 
     return (
         <>
