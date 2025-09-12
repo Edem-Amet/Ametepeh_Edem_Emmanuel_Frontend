@@ -293,7 +293,7 @@ const Banner = () => {
                             {/* Main Headline */}
                             <motion.div variants={itemVariants} className="space-y-4 mb-6 md:mb-8">
                                 <motion.h1
-                                    className="text-2xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl font-bold leading-tight"
+                                    className="text-2xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight"
                                     variants={itemVariants}
                                 >
                                     <span className="text-primary">
@@ -316,7 +316,7 @@ const Banner = () => {
 
                                 <motion.p
                                     variants={itemVariants}
-                                    className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl"
+                                    className="text-sm sm:text-base md:text-md text-muted-foreground leading-relaxed max-w-xl"
                                 >
                                     {currentBanner.description || 'Professional portfolio and showcase.'}
                                 </motion.p>
@@ -425,7 +425,7 @@ const Banner = () => {
                                                 href={button.url || '#'}
                                                 target={button.url?.startsWith('http') ? "_blank" : "_self"}
                                                 rel="noopener noreferrer"
-                                                className={`group relative inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-base transition-all duration-300 hover:scale-105 ${button.style === 'filled'
+                                                className={`group relative inline-flex items-center justify-center gap-2 px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold text-sm md:text-base transition-all duration-300 hover:scale-105 ${button.style === 'filled'
                                                     ? 'bg-secondary text-white shadow-lg hover:shadow-xl'
                                                     : 'border-2 border-primary text-primary hover:bg-secondary hover:text-background'
                                                     }`}
@@ -459,11 +459,11 @@ const Banner = () => {
                                         return (
                                             <motion.div
                                                 key={index}
-                                                className={`${colors[index % colors.length]} p-4 md:p-6 rounded-xl md:rounded-2xl shadow-lg transform transition-all duration-300 hover:scale-105`}
+                                                className={`${colors[index % colors.length]} p-3 md:p-5 rounded-xl md:rounded-2xl shadow-lg transform transition-all duration-300 hover:scale-105`}
                                                 whileHover={{ scale: 1.05, rotateY: 5 }}
                                             >
                                                 <motion.h3
-                                                    className="text-xl md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2"
+                                                    className="text-lg md:text-lg lg:text-lg font-bold mb-1 md:mb-2"
                                                     initial={{ scale: 0 }}
                                                     animate={{ scale: 1 }}
                                                     transition={{ delay: 0.3 + index * 0.1, type: "spring" }}
