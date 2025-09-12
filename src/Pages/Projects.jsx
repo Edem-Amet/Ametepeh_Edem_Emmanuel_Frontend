@@ -131,7 +131,7 @@ const Projects = ({ showAll = false, limit = 3 }) => {
         setCurrentSlide(index);
     };
 
-    // Loading state
+    // Loading 
     if (loading) {
         return (
             <section id="projects" className="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
@@ -165,7 +165,7 @@ const Projects = ({ showAll = false, limit = 3 }) => {
                     <div className="flex items-center justify-center py-16 md:py-20">
                         <div className="text-center space-y-4 max-w-md mx-auto px-4">
                             <AlertCircle className="h-10 w-10 md:h-12 md:w-12 text-red-500 mx-auto" />
-                            <h3 className="text-xl font-semibold text-gray-900">Unable to Load Projects</h3>
+                            <h3 className="text-xl font-semibold text-gray-900">Unable to Load Project</h3>
                             <p className="text-gray-600">{error}</p>
                             <button
                                 onClick={fetchProjects}
