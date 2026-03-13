@@ -341,8 +341,8 @@ const CertCarousel = () => {
                 <div className="mt-10 text-center">
                     <Link
                         to="/certificates"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
-                        style={{ background: 'linear-gradient(to right, #7B3B0A, #F5A623)' }}
+                        className="inline-flex items-center gap-2 px-5 py-2 rounded-2xl font-medium text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
+                        style={{ background: 'linear-gradient(to right, #8B4513, #FF8C00)' }}
                     >
                         View All Certificates
                         <FaArrowRight className="text-sm" />
