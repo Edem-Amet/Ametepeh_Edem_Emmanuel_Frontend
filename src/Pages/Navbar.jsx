@@ -143,13 +143,13 @@ const Navbar = () => {
                                     <HiMenuAlt1
                                         onClick={toggleMenu}
                                         className="cursor-pointer transition-all text-secondary hover:text-primary"
-                                        size={30}
+                                        size={34}
                                     />
                                 ) : (
                                     <HiMenuAlt3
                                         onClick={toggleMenu}
                                         className="cursor-pointer transition-all text-secondary hover:text-primary"
-                                        size={30}
+                                        size={34}
                                     />
                                 )}
                             </div>

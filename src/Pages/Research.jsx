@@ -1,40 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
-import { FaFilePdf, FaFilePowerpoint, FaFlask, FaMicroscope, FaSpinner } from "react-icons/fa";
+import { FaFilePdf, FaFilePowerpoint, FaFlask, FaMicroscope, FaSpinner, FaArrowRight } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
-const Research = () => {
+const Research = ({ isHomepage = false }) => {
     const [researchProjects, setResearchProjects] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     const backendUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
 
-    // Animation variants
-    const container = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-                when: "beforeChildren"
-            }
-        }
-    };
-
     const item = {
         hidden: { y: 20, opacity: 0 },
         visible: {
             y: 0,
             opacity: 1,
-            transition: {
-                duration: 0.6,
-                ease: "easeOut"
-            }
+            transition: { duration: 0.6, ease: "easeOut" }
         }
     };
 
-    // Fetch research projects
     useEffect(() => {
         const fetchResearch = async () => {
             try {
@@ -43,7 +27,6 @@ const Research = () => {
                 const data = await response.json();
 
                 if (data.success) {
-                    // Only show published research
                     const publishedResearch = data.data.filter(project => project.published);
                     setResearchProjects(publishedResearch);
                 } else {
@@ -60,11 +43,9 @@ const Research = () => {
         fetchResearch();
     }, [backendUrl]);
 
-    // Helper function to get file icon based on URL extension or title
     const getFileIcon = (title, url) => {
         const lowerTitle = title.toLowerCase();
         const lowerUrl = url.toLowerCase();
-
         if (lowerTitle.includes('poster') || lowerTitle.includes('presentation') ||
             lowerUrl.includes('.ppt') || lowerUrl.includes('.pptx')) {
             return <FaFilePowerpoint className="text-xl" />;
@@ -72,11 +53,9 @@ const Research = () => {
         return <FaFilePdf className="text-xl" />;
     };
 
-    // Helper function to get file background color
     const getFileIconBg = (title, url) => {
         const lowerTitle = title.toLowerCase();
         const lowerUrl = url.toLowerCase();
-
         if (lowerTitle.includes('poster') || lowerTitle.includes('presentation') ||
             lowerUrl.includes('.ppt') || lowerUrl.includes('.pptx')) {
             return 'bg-red-100 text-red-600';
@@ -84,44 +63,232 @@ const Research = () => {
         return 'bg-blue-100 text-blue-600';
     };
 
-    // Loading state
     if (loading) {
         return (
-            <section id="research" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-                <div className="max-w-6xl mx-auto">
-                    <div className="text-center">
-                        <FaSpinner className="animate-spin text-4xl text-primary mx-auto mb-4" />
-                        <p className="text-xl text-gray-600">Loading research projects...</p>
-                    </div>
-                </div>
-            </section>
+            <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted">
+                <motion.div
+                    className="text-center"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                >
+                    <svg width="220" height="180" viewBox="0 0 500 340" style={{ display: 'block', margin: '0 auto' }}>
+                        <style>{`
+                        @keyframes draw { to { stroke-dashoffset: 0; } }
+                        @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+                        @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.15); opacity: .7; } }
+                        .ea-spiral { stroke-dasharray: 900; stroke-dashoffset: 900; animation: draw 2s cubic-bezier(.4,0,.2,1) forwards; }
+                        .ea-dot { animation: pulse 1.4s ease-in-out infinite 2s; transform-origin: 257px 175px; }
+                        .ea-letter { opacity: 0; }
+                        .ea-letter-e { animation: fadeUp .5s ease .3s forwards; }
+                        .ea-letter-a { animation: fadeUp .5s ease .5s forwards; }
+                        .ea-name { opacity: 0; animation: fadeUp .6s ease .9s forwards; }
+                    `}</style>
+
+                        {/* Spiral */}
+                        <path
+                            className="ea-spiral"
+                            d="M 160,245 C 120,245 95,215 95,180 C 95,130 135,100 185,100 C 250,100 295,148 295,200 C 295,255 250,295 195,295 C 130,295 80,250 80,185 C 80,125 128,80 195,80 C 270,80 340,128 345,185 C 352,255 310,310 240,320"
+                            fill="none"
+                            stroke="#F5A623"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                        />
+
+                        {/* Dot */}
+                        <circle className="ea-dot" cx="257" cy="175" r="5" fill="#F5A623" />
+
+                        {/* E */}
+                        <text
+                            className="ea-letter ea-letter-e"
+                            x="150" y="240"
+                            fontFamily="Georgia, 'Times New Roman', serif"
+                            fontSize="160"
+                            fontWeight="700"
+                            fill="#7B3B0A"
+                        >E</text>
+
+                        {/* A */}
+                        <text
+                            className="ea-letter ea-letter-a"
+                            x="240" y="240"
+                            fontFamily="Georgia, 'Times New Roman', serif"
+                            fontSize="160"
+                            fontWeight="700"
+                            fill="#F5A623"
+                        >A</text>
+
+                        {/* Name */}
+                        <text
+                            className="ea-name"
+                            x="250" y="298"
+                            fontFamily="Georgia, 'Times New Roman', serif"
+                            fontSize="16"
+                            fontWeight="400"
+                            letterSpacing="6"
+                            fill="#7B3B0A"
+                            textAnchor="middle"
+                        >EDEM  AMET</text>
+                    </svg>
+                </motion.div>
+            </div>
         );
     }
-
-    // Error state
     if (error) {
         return (
             <section id="research" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-                <div className="max-w-6xl mx-auto">
-                    <div className="text-center">
-                        <p className="text-xl text-red-600 mb-4">Error loading research projects</p>
-                        <p className="text-gray-600">{error}</p>
-                    </div>
+                <div className="max-w-6xl mx-auto text-center">
+                    <p className="text-xl text-red-600 mb-4">Error loading research projects</p>
+                    <p className="text-gray-600">{error}</p>
                 </div>
             </section>
         );
     }
 
-    // Get the most recent published research project
     const currentResearch = researchProjects.length > 0 ? researchProjects[0] : null;
-
-    // Check if there's a next project to show
     const hasNextProject = currentResearch?.nextProject?.title && currentResearch?.nextProject?.description;
 
+    // ─────────────────────────────────────────────
+    // HOMEPAGE VIEW — condensed card
+    // ─────────────────────────────────────────────
+    if (isHomepage) {
+        return (
+            <section id="research" className="pt-20 sm:pt-20 mt-4 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-background to-muted">
+                <motion.div
+                    className="max-w-6xl mx-auto"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+                    }}
+                >
+                    {/* Header */}
+                    <motion.div variants={item} className="text-center mb-8">
+                        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+                            Research <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Work</span>
+                        </h1>
+                        <p className="text-md text-gray-600 max-w-3xl mx-auto">
+                            Exploring scientific frontiers through physics and computing
+                        </p>
+                    </motion.div>
+
+                    {/* No Research State */}
+                    {!currentResearch && (
+                        <motion.div variants={item} className="text-center py-12">
+                            <FaMicroscope className="text-6xl text-gray-400 mx-auto mb-4" />
+                            <h3 className="text-2xl font-semibold text-gray-600 mb-2">No published research yet</h3>
+                            <p className="text-gray-500">Research projects will appear here when published.</p>
+                        </motion.div>
+                    )}
+
+                    {/* Condensed Research Card */}
+                    {currentResearch && (
+                        <motion.div variants={item} className="mb-20">
+                            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                                {/* Cover Image — same as full page */}
+                                <motion.div
+                                    whileHover={{ scale: 1.02 }}
+                                    className="relative h-64 sm:h-80 overflow-hidden"
+                                >
+                                    {currentResearch.mainImage?.url ? (
+                                        <img
+                                            src={currentResearch.mainImage.url}
+                                            alt={currentResearch.mainImage.altText || currentResearch.title}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    ) : (
+                                        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                                            <FaMicroscope className="text-6xl text-gray-400" />
+                                        </div>
+                                    )}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent flex items-end p-6">
+                                        <div>
+                                            {currentResearch.statusTag && (
+                                                <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary text-white text-sm mb-3">
+                                                    <FaMicroscope className="mr-2" /> {currentResearch.statusTag}
+                                                </div>
+                                            )}
+                                            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                                                {currentResearch.title}
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </motion.div>
+
+                                {/* Overview + CTA only */}
+                                <div className="p-6 sm:p-8">
+                                    <h3 className="text-xl font-semibold text-gray-800 mb-4">Project Overview</h3>
+                                    <p className="text-gray-600 mb-6">
+                                        {currentResearch.overview || 'No overview provided.'}
+                                    </p>
+
+                                    {/* View Full Project Button */}
+                                    <motion.a
+                                        href="/research"
+                                        whileHover={{ scale: 1.04 }}
+                                        whileTap={{ scale: 0.97 }}
+                                        className="inline-flex items-center text-sm gap-2 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-xl font-medium shadow-md hover:shadow-lg transition-shadow"
+                                    >
+                                        View Full Project
+                                        <FaArrowRight className="text-sm" />
+                                    </motion.a>
+                                </div>
+                            </div>
+                        </motion.div>
+                    )}
+
+                    {/* Upcoming / Next Project teaser */}
+                    {hasNextProject && (
+                        <motion.div variants={item} className="mb-20">
+                            <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 sm:p-12 rounded-2xl text-center">
+                                <div className="max-w-2xl mx-auto">
+                                    {currentResearch.nextProject.comingSoon && (
+                                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-white text-primary text-sm mb-4 shadow-sm">
+                                            <FaFlask className="mr-2" /> Coming Soon
+                                        </div>
+                                    )}
+                                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                                        {currentResearch.nextProject.title}
+                                    </h2>
+                                    <p className="text-gray-600 mb-6">
+                                        {currentResearch.nextProject.description}
+                                    </p>
+                                    {currentResearch.nextProject.notifyButton?.label && currentResearch.nextProject.notifyButton?.url && (
+                                        <motion.a
+                                            href={currentResearch.nextProject.notifyButton.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.98 }}
+                                            className="inline-block bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-lg font-medium"
+                                        >
+                                            {currentResearch.nextProject.notifyButton.label}
+                                        </motion.a>
+                                    )}
+                                </div>
+                            </div>
+                        </motion.div>
+                    )}
+                </motion.div>
+            </section>
+        );
+    }
+
+    // ─────────────────────────────────────────────
+    // FULL PAGE VIEW — everything
+    // ─────────────────────────────────────────────
     return (
         <section id="research" className="pt-20 sm:pt-20 mt-4 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-background to-muted">
             <motion.div
                 className="max-w-6xl mx-auto"
+                initial="hidden"
+                animate="visible"
+                variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1, transition: { staggerChildren: 0.2, when: "beforeChildren" } }
+                }}
             >
                 {/* Header */}
                 <motion.div variants={item} className="text-center mb-8">
@@ -142,11 +309,11 @@ const Research = () => {
                     </motion.div>
                 )}
 
-                {/* Current Research */}
+                {/* Current Research — full detail */}
                 {currentResearch && (
                     <motion.div variants={item} className="mb-20">
                         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                            {/* Cover Image with Hover Effect */}
+                            {/* Cover Image */}
                             <motion.div
                                 whileHover={{ scale: 1.02 }}
                                 className="relative h-64 sm:h-80 overflow-hidden"
@@ -255,7 +422,7 @@ const Research = () => {
                                         )}
                                     </div>
 
-                                    {/* Sidebar with Links */}
+                                    {/* Sidebar */}
                                     <div className="lg:col-span-1">
                                         <div className="bg-gray-50 p-6 rounded-xl">
                                             {/* Research Materials */}
@@ -379,7 +546,6 @@ const Research = () => {
                                             {project.overview}
                                         </p>
 
-                                        {/* Quick stats */}
                                         <div className="flex items-center justify-between text-xs text-gray-500">
                                             <div className="flex items-center space-x-4">
                                                 {project.collaborators?.length > 0 && (

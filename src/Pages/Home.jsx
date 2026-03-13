@@ -1,21 +1,18 @@
 import React from 'react';
 import Banner from '../Pages/Banner';
 import Research from '../Pages/Research';
-import Expertise from '../Pages/Expertise';
+import Skills from '../Pages/Expertise';
+import Certificates from '../Pages/Certificates';
 import Projects from '../Pages/Projects';
-
 
 const Home = () => {
     return (
         <div>
             <Banner />
-            <Research />
-            <Expertise />
+            <Research isHomepage={true} />
+            <Skills isHomepage={true} />
+            <Certificates isHomepage={true} />
             <Projects showAll={false} limit={3} />
-            {/* Your other home page content here */}
-            <div className="pt-24">
-                {/* Page content goes here */}
-            </div>
         </div>
     );
 };

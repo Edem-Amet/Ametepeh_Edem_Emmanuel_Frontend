@@ -192,19 +192,69 @@ const Banner = () => {
         return (
             <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted">
                 <motion.div
-                    className="text-center space-y-6"
+                    className="text-center"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.3 }}
                 >
-                    <div className="relative">
-                        <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-transparent border-t-primary border-b-secondary"></div>
-                        <div className="absolute inset-0 inline-block animate-ping rounded-full h-16 w-16 border-2 border-secondary opacity-20"></div>
-                    </div>
-                    <div className="space-y-2">
-                        <h2 className="text-2xl font-bold text-foreground">Loading Portfolio</h2>
-                        <p className="text-muted-foreground">Preparing your experience...</p>
-                    </div>
+                    <svg width="220" height="180" viewBox="0 0 500 340" style={{ display: 'block', margin: '0 auto' }}>
+                        <style>{`
+                        @keyframes draw { to { stroke-dashoffset: 0; } }
+                        @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+                        @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.15); opacity: .7; } }
+                        .ea-spiral { stroke-dasharray: 900; stroke-dashoffset: 900; animation: draw 2s cubic-bezier(.4,0,.2,1) forwards; }
+                        .ea-dot { animation: pulse 1.4s ease-in-out infinite 2s; transform-origin: 257px 175px; }
+                        .ea-letter { opacity: 0; }
+                        .ea-letter-e { animation: fadeUp .5s ease .3s forwards; }
+                        .ea-letter-a { animation: fadeUp .5s ease .5s forwards; }
+                        .ea-name { opacity: 0; animation: fadeUp .6s ease .9s forwards; }
+                    `}</style>
+
+                        {/* Spiral */}
+                        <path
+                            className="ea-spiral"
+                            d="M 160,245 C 120,245 95,215 95,180 C 95,130 135,100 185,100 C 250,100 295,148 295,200 C 295,255 250,295 195,295 C 130,295 80,250 80,185 C 80,125 128,80 195,80 C 270,80 340,128 345,185 C 352,255 310,310 240,320"
+                            fill="none"
+                            stroke="#F5A623"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                        />
+
+                        {/* Dot */}
+                        <circle className="ea-dot" cx="257" cy="175" r="5" fill="#F5A623" />
+
+                        {/* E */}
+                        <text
+                            className="ea-letter ea-letter-e"
+                            x="150" y="240"
+                            fontFamily="Georgia, 'Times New Roman', serif"
+                            fontSize="160"
+                            fontWeight="700"
+                            fill="#7B3B0A"
+                        >E</text>
+
+                        {/* A */}
+                        <text
+                            className="ea-letter ea-letter-a"
+                            x="240" y="240"
+                            fontFamily="Georgia, 'Times New Roman', serif"
+                            fontSize="160"
+                            fontWeight="700"
+                            fill="#F5A623"
+                        >A</text>
+
+                        {/* Name */}
+                        <text
+                            className="ea-name"
+                            x="250" y="298"
+                            fontFamily="Georgia, 'Times New Roman', serif"
+                            fontSize="16"
+                            fontWeight="400"
+                            letterSpacing="6"
+                            fill="#7B3B0A"
+                            textAnchor="middle"
+                        >EDEM  AMET</text>
+                    </svg>
                 </motion.div>
             </div>
         );
@@ -219,9 +269,6 @@ const Banner = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <div className="bg-destructive/20 rounded-full p-6 w-24 h-24 mx-auto flex items-center justify-center">
-                        <RotateCcw className="h-12 w-12 text-destructive" />
-                    </div>
                     <div className="space-y-2">
                         <h2 className="text-2xl font-bold text-destructive">Unable to Load</h2>
                         <p className="text-destructive">{error}</p>
@@ -232,7 +279,7 @@ const Banner = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        Try Again
+                        Update Ongoing
                     </motion.button>
                 </motion.div>
             </div>
@@ -241,7 +288,7 @@ const Banner = () => {
 
     if (banners.length === 0) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted">
+            <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-background to-muted">
                 <div className="text-center space-y-4">
                     <h2 className="text-2xl font-bold text-foreground">No Banners Available</h2>
                     <p className="text-muted-foreground">Please check back later.</p>
@@ -253,7 +300,8 @@ const Banner = () => {
     const currentBanner = banners[currentSlide];
 
     return (
-        <div className="relative w-full pl-2 pr-2 sm:pl-8 sm:pr-8 mt-16 pt-12 sm:pt-2 md:mt-16 sm:mt-8 min-h-screen overflow-hidden bg-gradient-to-br from-background via-background to-muted">
+        <div className="relative
+         w-full pl-2 pr-2 sm:pl-8 sm:pr-8 mt-16 pt-6 md:pt-8 sm:pt-2 md:mt-16 sm:mt-8 min-h-screen overflow-hidden bg-gradient-to-br from-background via-background to-muted">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute inset-0" style={{
@@ -264,7 +312,7 @@ const Banner = () => {
 
             {/* Main Banner Content */}
             <div
-                className="relative h-screen pt-16 lg:pt-0"
+                className="relative min-h-screen sm:pt-16"
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
@@ -281,7 +329,7 @@ const Banner = () => {
                             x: { type: "spring", stiffness: 300, damping: 30 },
                             opacity: { duration: 0.2 }
                         }}
-                        className="absolute inset-0 flex flex-col-reverse lg:flex-row items-center justify-between px-4 sm:px-6 lg:px-12 xl:px-20 py-8 lg:py-0"
+                        className="flex flex-col-reverse lg:flex-row items-center justify-center gap-4 sm:gap-12 px-4 sm:px-6 lg:px-12 xl:px-20 py-8 lg:py-0"
                     >
                         {/* Left Content */}
                         <motion.div
@@ -482,7 +530,7 @@ const Banner = () => {
 
                         {/* Right Content - Image */}
                         <motion.div
-                            className="flex-1 flex justify-center items-center relative max-w-md mx-auto lg:mx-0 mb-8 lg:mb-0"
+                            className="flex justify-center items-center relative max-w-md mx-auto lg:mx-0 mb-8 lg:mb-0"
                             variants={itemVariants}
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
@@ -491,11 +539,11 @@ const Banner = () => {
                             <div className="relative">
                                 {/* Main Image Container */}
                                 <motion.div
-                                    className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-secondary to-primary p-1"
+                                    className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-secondary to-primary p-0.5"
                                     variants={floatingVariants}
                                     animate="animate"
                                 >
-                                    <div className="w-full h-full rounded-3xl overflow-hidden bg-background">
+                                    <div className="w-full h-full rounded-2xl overflow-hidden bg-background">
                                         {currentBanner.mainImage?.url ? (
                                             <img
                                                 src={currentBanner.mainImage.url}

@@ -24,9 +24,9 @@ import Projects from "./Pages/Projects";
 import Contact from "./Pages/Contact";
 import Research from "./Pages/Research";
 import Expertise from './Pages/Expertise';
+import Certificates from './Pages/Certificates';
 import HobbiesPage from "./Pages/HobbiesPage";
 import Footer from './Pages/Footer';
-
 
 
 // Existing Admin Pages
@@ -96,6 +96,7 @@ const AppRoutes = () => {
         <Route path="/projects" element={<ErrorBoundary><Projects showAll={true} /></ErrorBoundary>} />
         <Route path="/contact" element={<ErrorBoundary><Contact /></ErrorBoundary>} />
         <Route path="/expertise" element={<ErrorBoundary><Expertise /></ErrorBoundary>} />
+        <Route path="/certificates" element={<ErrorBoundary><Certificates /></ErrorBoundary>} />
         <Route path="/hobbies" element={<ErrorBoundary><HobbiesPage /></ErrorBoundary>} />
         <Route path="/footer" element={<ErrorBoundary><Footer /></ErrorBoundary>} />
       </Route>
