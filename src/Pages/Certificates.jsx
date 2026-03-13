@@ -6,7 +6,14 @@ import { Link } from 'react-router-dom';
 // ─────────────────────────────────────────────
 // CERTIFICATE DATA — add more objects here as you earn them
 // ─────────────────────────────────────────────
-import cert1 from '../assets/draw1.jpg'; // Getting Started with Git and GitHub
+import cert1 from '../assets/html_css_js.png'; // Getting Started with Git and GitHub
+import cert2 from '../assets/data_structures.png'; // Data Structures
+import cert3 from '../assets/algo_strings.png'; // Algorithms on Strings
+import cert4 from '../assets/intro_cloud_computing.png'; // Introduction to Cloud Computing
+import cert5 from '../assets/intro_to_SE.png'; // IBM Introduction to Software Engineering
+import cert6 from '../assets/algorithm_on_graphs.png'; // Algorithm on Graphs
+import cert7 from '../assets/Algorithm_toolbox.png'; // Algorithmic Toolbox
+import cert8 from '../assets/graph.png'; // Foundations of UX Design
 
 const certificates = [
     {
@@ -17,18 +24,102 @@ const certificates = [
         date: "2024",
         image: cert1,
         description:
-            "Completed IBM's hands-on course covering version control fundamentals, Git workflows, branching strategies, and collaborative development on GitHub.",
-        skills: ["Git", "GitHub", "Version Control", "Branching", "Pull Requests", "Open Source Collaboration"],
-        credentialUrl: "", // paste your credential/verify link here
+            "Completed IBM's hands-on course covering version control fundamentals, Git workflows, branching strategies, and collaborative development on GitHub. Gained practical experience using Git commands and managing repositories.",
+        skills: ["Git", "GitHub", "Version Control", "Branching & Merging", "Pull Requests", "Open Source Collaboration"],
+        credentialUrl: "https://www.coursera.org/account/accomplishments/records/MRV48JYD8YVR",
+    },
+    {
+        id: 2,
+        title: "Data Structures",
+        issuer: "University of California San Diego",
+        category: "Computer Science",
+        date: "2024",
+        image: cert2,
+        description:
+            "Mastered core data structures including arrays, linked lists, stacks, queues, trees, heaps, and hash tables through UC San Diego's rigorous curriculum. Applied these structures to design efficient algorithms and solve complex computational problems.",
+        skills: ["Arrays & Linked Lists", "Trees & Heaps", "Hash Tables", "Stacks & Queues", "Algorithm Design", "Time Complexity"],
+        credentialUrl: "https://www.coursera.org/account/accomplishments/records/WLIE8KEJEUUU",
+    },
+    {
+        id: 3,
+        title: "Algorithms on Strings",
+        issuer: "University of California San Diego",
+        category: "Computer Science",
+        date: "2024",
+        image: cert3,
+        description:
+            "Studied advanced string processing algorithms including pattern matching, suffix arrays, Burrows-Wheeler transform, and sequence alignment. Applied techniques used in bioinformatics, search engines, and data compression.",
+        skills: ["Pattern Matching", "Suffix Arrays", "Suffix Trees", "Burrows-Wheeler Transform", "String Alignment", "Dynamic Programming"],
+        credentialUrl: "https://www.coursera.org/account/accomplishments/records/EXA9FJVQSC7B",
+    },
+    {
+        id: 4,
+        title: "Introduction to Cloud Computing",
+        issuer: "IBM",
+        category: "Cloud & DevOps",
+        date: "2024",
+        image: cert4,
+        description:
+            "Gained a solid foundation in cloud computing concepts, service models (IaaS, PaaS, SaaS), deployment models, and emerging cloud technologies. Explored key providers and understood how cloud infrastructure supports modern applications.",
+        skills: ["Cloud Fundamentals", "IaaS / PaaS / SaaS", "Public & Private Cloud", "Cloud Security", "Microservices", "Serverless Computing"],
+        credentialUrl: "https://www.coursera.org/account/accomplishments/records/OPJZ363E6JM8",
+    },
+    {
+        id: 5,
+        title: "Introduction to Software Engineering",
+        issuer: "IBM",
+        category: "Software Engineering",
+        date: "2024",
+        image: cert5,
+        description:
+            "Completed IBM's introduction to software engineering covering the SDLC, agile methodologies, software architecture, design patterns, and career pathways in the field. Built a foundational understanding of how professional software is conceived, built, and maintained.",
+        skills: ["SDLC", "Agile & Scrum", "Software Architecture", "Design Patterns", "DevOps Basics", "Career in Tech"],
+        credentialUrl: "https://www.coursera.org/account/accomplishments/records/QXUI8NA0PL7U",
+    },
+    {
+        id: 6,
+        title: "Algorithms on Graphs",
+        issuer: "University of California San Diego",
+        category: "Computer Science",
+        date: "2024",
+        image: cert6,
+        description:
+            "Explored graph theory and algorithms including BFS, DFS, shortest paths (Dijkstra, Bellman-Ford), minimum spanning trees, and strongly connected components. Applied graph algorithms to real-world network and routing problems.",
+        skills: ["BFS & DFS", "Dijkstra's Algorithm", "Bellman-Ford", "Minimum Spanning Trees", "Topological Sort", "Strongly Connected Components"],
+        credentialUrl: "https://www.coursera.org/account/accomplishments/records/7EB6LCY836YJ",
+    },
+    {
+        id: 7,
+        title: "Algorithmic Toolbox",
+        issuer: "University of California San Diego",
+        category: "Computer Science",
+        date: "2024",
+        image: cert7,
+        description:
+            "Built a strong algorithmic thinking toolkit covering greedy algorithms, divide-and-conquer, dynamic programming, and algorithm analysis. Solved a wide range of programming challenges to sharpen problem-solving skills.",
+        skills: ["Greedy Algorithms", "Divide & Conquer", "Dynamic Programming", "Recursion", "Big-O Analysis", "Problem Solving"],
+        credentialUrl: "https://www.coursera.org/account/accomplishments/verify/ELPFP4P89W2P",
+    },
+    {
+        id: 8,
+        title: "Foundations of User Experience (UX) Design",
+        issuer: "Google",
+        category: "UI/UX Design",
+        date: "2024",
+        image: cert8,
+        description:
+            "Completed Google's foundational UX design course covering the design thinking process, user research methods, wireframing, prototyping, and accessibility principles. Developed an understanding of what makes products useful, equitable, and enjoyable.",
+        skills: ["Design Thinking", "User Research", "Wireframing", "Prototyping", "Accessibility", "Usability Testing"],
+        credentialUrl: "https://www.coursera.org/account/accomplishments/records/W9K6L44ETELW",
     },
     // ── Add more certificates below ──
     // {
-    //   id: 2,
+    //   id: 9,
     //   title: "Certificate Title",
     //   issuer: "Issuer Name",
     //   category: "Category",
     //   date: "2024",
-    //   image: cert2,
+    //   image: cert9,
     //   description: "Short description of what you learned.",
     //   skills: ["Skill 1", "Skill 2"],
     //   credentialUrl: "",
@@ -167,8 +258,11 @@ const CertCarousel = () => {
             >
                 {/* Header */}
                 <div className="text-center mb-10">
-                    <h2 className="text-2xl font-bold text-primary mb-3">
-                        Certificates
+                    <h2 className="text-2xl font-bold text-gray-900 mb-3">
+                        Certificates &amp;{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                            Achievements
+                        </span>
                     </h2>
                     <p className="text-md text-gray-500 max-w-xl mx-auto">
                         Credentials I've earned along the way
@@ -242,6 +336,18 @@ const CertCarousel = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* CTA */}
+                <div className="mt-10 text-center">
+                    <Link
+                        to="/certificates"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
+                        style={{ background: 'linear-gradient(to right, #7B3B0A, #F5A623)' }}
+                    >
+                        View All Certificates
+                        <FaArrowRight className="text-sm" />
+                    </Link>
+                </div>
             </motion.div>
 
             {/* Keyframe CSS */}
@@ -282,8 +388,17 @@ const CertificatesPage = () => {
             >
                 {/* Header */}
                 <motion.div variants={item} className="text-center mb-14">
-
-                    <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                    <div
+                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
+                        style={{
+                            background: 'linear-gradient(to right, #7B3B0A15, #F5A62315)',
+                            color: '#7B3B0A',
+                            border: '1px solid #F5A62340',
+                        }}
+                    >
+                        <FaAward /> Verified Credentials
+                    </div>
+                    <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                         My{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                             Certificates
