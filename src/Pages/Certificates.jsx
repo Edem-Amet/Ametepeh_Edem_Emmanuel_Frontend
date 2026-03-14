@@ -259,9 +259,9 @@ const CertCarousel = () => {
                 {/* Header */}
                 <div className="text-center mb-10">
                     <h2 className="text-2xl font-bold text-gray-900 mb-3">
-                        Certificates &amp;{' '}
+                        My{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                            Achievements
+                            Certificates
                         </span>
                     </h2>
                     <p className="text-md text-gray-500 max-w-xl mx-auto">
@@ -335,18 +335,6 @@ const CertCarousel = () => {
                             ))}
                         </div>
                     </div>
-                </div>
-
-                {/* CTA */}
-                <div className="mt-10 text-center">
-                    <Link
-                        to="/certificates"
-                        className="inline-flex items-center gap-2 px-5 py-2 rounded-2xl font-medium text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
-                        style={{ background: 'linear-gradient(to right, #8B4513, #FF8C00)' }}
-                    >
-                        View All Certificates
-                        <FaArrowRight className="text-sm" />
-                    </Link>
                 </div>
             </motion.div>
 

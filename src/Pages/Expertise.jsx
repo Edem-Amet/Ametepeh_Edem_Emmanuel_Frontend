@@ -193,7 +193,7 @@ const Skills = ({ isHomepage = false }) => {
                     {/* "View All Skills" CTA */}
                     <motion.div variants={item} className="mt-10 text-center">
                         <Link
-                            to="/expertise"
+                            to="/skills"
                             className="inline-flex items-center gap-2 px-5 py-2 rounded-xl font-medium text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
                             style={{ background: 'linear-gradient(to right, var(--color-primary, #8B4513), var(--color-secondary, #FF8C00))' }}
                         >
