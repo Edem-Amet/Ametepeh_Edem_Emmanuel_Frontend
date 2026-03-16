@@ -6,14 +6,15 @@ import { Link } from 'react-router-dom';
 // ─────────────────────────────────────────────
 // CERTIFICATE DATA — add more objects here as you earn them
 // ─────────────────────────────────────────────
-import cert1 from '../assets/html_css_js.png'; // Getting Started with Git and GitHub
+import cert1 from '../assets/git.png'; // Getting Started with Git and GitHub
 import cert2 from '../assets/data_structures.png'; // Data Structures
 import cert3 from '../assets/algo_strings.png'; // Algorithms on Strings
 import cert4 from '../assets/intro_cloud_computing.png'; // Introduction to Cloud Computing
 import cert5 from '../assets/intro_to_SE.png'; // IBM Introduction to Software Engineering
 import cert6 from '../assets/algorithm_on_graphs.png'; // Algorithm on Graphs
 import cert7 from '../assets/Algorithm_toolbox.png'; // Algorithmic Toolbox
-import cert8 from '../assets/graph.png'; // Foundations of UX Design
+import cert8 from '../assets/google.png'; // Foundations of UX Design
+import cert9 from '../assets/html_css_js.png'; // HTML, CSS, JavaScript for Web Developers
 
 const certificates = [
     {
@@ -42,16 +43,17 @@ const certificates = [
     },
     {
         id: 3,
-        title: "Algorithms on Strings",
-        issuer: "University of California San Diego",
-        category: "Computer Science",
+        title: "Foundations of User Experience (UX) Design",
+        issuer: "Google",
+        category: "UI/UX Design",
         date: "2024",
-        image: cert3,
+        image: cert8,
         description:
-            "Studied advanced string processing algorithms including pattern matching, suffix arrays, Burrows-Wheeler transform, and sequence alignment. Applied techniques used in bioinformatics, search engines, and data compression.",
-        skills: ["Pattern Matching", "Suffix Arrays", "Suffix Trees", "Burrows-Wheeler Transform", "String Alignment", "Dynamic Programming"],
-        credentialUrl: "https://www.coursera.org/account/accomplishments/records/EXA9FJVQSC7B",
+            "Completed Google's foundational UX design course covering the design thinking process, user research methods, wireframing, prototyping, and accessibility principles. Developed an understanding of what makes products useful, equitable, and enjoyable.",
+        skills: ["Design Thinking", "User Research", "Wireframing", "Prototyping", "Accessibility", "Usability Testing"],
+        credentialUrl: "https://www.coursera.org/account/accomplishments/records/W9K6L44ETELW",
     },
+
     {
         id: 4,
         title: "Introduction to Cloud Computing",
@@ -102,16 +104,29 @@ const certificates = [
     },
     {
         id: 8,
-        title: "Foundations of User Experience (UX) Design",
-        issuer: "Google",
-        category: "UI/UX Design",
+        title: "Algorithms on Strings",
+        issuer: "University of California San Diego",
+        category: "Computer Science",
         date: "2024",
-        image: cert8,
+        image: cert3,
         description:
-            "Completed Google's foundational UX design course covering the design thinking process, user research methods, wireframing, prototyping, and accessibility principles. Developed an understanding of what makes products useful, equitable, and enjoyable.",
-        skills: ["Design Thinking", "User Research", "Wireframing", "Prototyping", "Accessibility", "Usability Testing"],
-        credentialUrl: "https://www.coursera.org/account/accomplishments/records/W9K6L44ETELW",
+            "Studied advanced string processing algorithms including pattern matching, suffix arrays, Burrows-Wheeler transform, and sequence alignment. Applied techniques used in bioinformatics, search engines, and data compression.",
+        skills: ["Pattern Matching", "Suffix Arrays", "Suffix Trees", "Burrows-Wheeler Transform", "String Alignment", "Dynamic Programming"],
+        credentialUrl: "https://www.coursera.org/account/accomplishments/records/EXA9FJVQSC7B",
     },
+    {
+        id: 9,
+        title: "HTML, CSS, JavaScript for Web Developers",
+        issuer: "IBM",
+        category: "Web Development",
+        date: "2025",
+        image: cert9,
+        description:
+            "Learned the fundamentals of web development including HTML5, CSS3, and JavaScript. Built responsive websites and interactive web applications while following best practices for modern front-end development.",
+        skills: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "DOM Manipulation", "Web Accessibility"],
+        credentialUrl: "https://coursera.org/share/60c2489fc8ec201138cb2836fc2a11fb",
+    },
+
     // ── Add more certificates below ──
     // {
     //   id: 9,
