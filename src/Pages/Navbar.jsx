@@ -93,6 +93,11 @@ const Navbar = () => {
                                     <Link to="/projects" onClick={scrollToTop} className={linkClass}>Projects</Link>
                                 </li>
 
+                                {/* Blog */}
+                                <li className={navLinkClass}>
+                                    <Link to="/blog" onClick={scrollToTop} className={linkClass}>Blog</Link>
+                                </li>
+
                                 {/* Hobbies */}
                                 <li className={navLinkClass}>
                                     <Link to="/hobbies" onClick={scrollToTop} className={linkClass}>Hobbies</Link>

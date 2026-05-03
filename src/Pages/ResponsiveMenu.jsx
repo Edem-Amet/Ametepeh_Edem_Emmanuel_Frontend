@@ -21,6 +21,7 @@ const menuItems = [
     { path: "/", label: "Home", icon: FaHome, group: "main" },
     { path: "/research", label: "Research", icon: FaFlask, group: "main" },
     { path: "/projects", label: "Projects", icon: FaBriefcase, group: "main" },
+    { path: "/blog", label: "Blog", icon: FaFileAlt, group: "main" },
     { path: "/hobbies", label: "Hobbies", icon: FaHeart, group: "main" },
     { path: "/skills", label: "My Expertise", icon: FaLaptopCode, group: "about" },
     { path: "/about", label: "Volunteer Work", icon: FaFileAlt, group: "about" },

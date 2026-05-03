@@ -200,6 +200,13 @@ const AdminDashboard = () => {
             color: 'bg-green-500'
         },
         {
+            title: 'Manage Blogs',
+            description: 'Create and manage blog posts',
+            icon: <FaBook className="text-xl" />,
+            path: '/admin/manageblogs',
+            color: 'bg-yellow-500'
+        },
+        {
             title: 'Manage Projects',
             description: 'Manage Personal Projects',
             icon: <FaStar className="text-xl" />,

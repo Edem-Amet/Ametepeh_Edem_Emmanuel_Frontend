@@ -21,6 +21,8 @@ import About from "./Pages/About";
 import Navbar from "./Pages/Navbar";
 import ResponsiveMenu from "./Pages/ResponsiveMenu";
 import Projects from "./Pages/Projects";
+import Blog from "./Pages/Blog";
+import BlogDetail from "./Pages/BlogDetail";
 import Contact from "./Pages/Contact";
 import Research from "./Pages/Research";
 import Expertise from './Pages/Expertise';
@@ -35,6 +37,7 @@ import SecuritySettings from './Pages/Admin/securitySettings';
 import ManageBanner from './Pages/Admin/manageBanner';
 import ManageResearch from './Pages/Admin/manageResearch';
 import ManageProjects from './Pages/Admin/manageProjects';
+import ManageBlogs from './Pages/Admin/manageBlogs';
 
 
 // Auth Pages
@@ -91,6 +94,8 @@ const AppRoutes = () => {
         <Route path="/navbar" element={<ErrorBoundary><Navbar /></ErrorBoundary>} />
         <Route path="/responsivemenu" element={<ErrorBoundary><ResponsiveMenu /></ErrorBoundary>} />
         <Route path="/Banner" element={<ErrorBoundary><Banner /></ErrorBoundary>} />
+        <Route path="/blog" element={<ErrorBoundary><Blog /></ErrorBoundary>} />
+        <Route path="/blog/:id" element={<ErrorBoundary><BlogDetail /></ErrorBoundary>} />
         <Route path="/research" element={<ErrorBoundary><Research /></ErrorBoundary>} />
         <Route path="/about" element={<ErrorBoundary><About /></ErrorBoundary>} />
         <Route path="/projects" element={<ErrorBoundary><Projects showAll={true} /></ErrorBoundary>} />
@@ -145,6 +150,15 @@ const AppRoutes = () => {
         element={
           <ProtectedRoute>
             <ErrorBoundary><ManageProjects /></ErrorBoundary>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/manageblogs"
+        element={
+          <ProtectedRoute>
+            <ErrorBoundary><ManageBlogs /></ErrorBoundary>
           </ProtectedRoute>
         }
       />
